@@ -1,0 +1,60 @@
+.introContainer {
+    position: relative;
+    background-color: var(--color-background);
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 50%;
+}
+
+.introVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.introInfo {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+}
+
+.introHeading {
+    font-size: 100px;
+    text-shadow: 3px 0px rgba(255, 255, 255, 0.5);
+    color: #e50914;
+}
+
+.introOverview {
+    font-size: 25px;
+    max-width: 800px;
+}
+
+.btnVolume {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    padding: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    transition: all ease-out 0.3s;
+    transform: scale(1);
+}
+
+.btnVolume:hover {
+    transform: scale(1.2);
+    background: rgba(220, 220, 220, 0.2);
+}
+
+.introFade {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5) 40%, rgb(10, 10, 10), rbg(10, 10, 10));
+}

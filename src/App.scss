@@ -1,0 +1,21 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    --color-white: rgb(220, 220, 220);
+    --color-background: rgb(15, 15, 15);
+    --color-red: #e50914;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    overflow-y: scroll;
+}

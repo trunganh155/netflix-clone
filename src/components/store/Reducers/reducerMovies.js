@@ -4,7 +4,7 @@ const reducerMoviesInitialState = {
   NetflixOriginals: null,
   TrendingMovies: null,
   NowPlayingMovies: null,
-  ActionMovies: null,
+  UpcomingMovies: null,
   TopRateMovies: null,
 };
 
@@ -16,14 +16,14 @@ const reducerMovies = (state = reducerMoviesInitialState, action) => {
       return { ...state, NetflixOriginals: payload };
 
     case Types.GET_TRENDING_MOVIES:
-      // console.log(payload);
       return { ...state, TrendingMovies: payload };
 
     case Types.GET_NOWPLAYING_MOVIES:
       return { ...state, NowPlayingMovies: payload };
 
-    case Types.GET_ACTION_MOVIES:
-      return { ...state, ActionMovies: payload };
+    case Types.GET_UPCOMING_MOVIES:
+      return { ...state, UpcomingMovies: payload };
+      console.log(payload);
 
     case Types.GET_TOPRATE_MOVIES:
       return { ...state, TopRateMovies: payload };

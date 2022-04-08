@@ -8,17 +8,17 @@ function Contents() {
   const dispatch = useDispatch();
   const {
     NetflixOriginals,
+    TrendingMovies,
+    UpcomingMovies,
     NowPlayingMovies,
     TopRateMovies,
-    ActionMovies,
-    TrendingMovies,
   } = useSelector((state) => state.infoMovies);
 
   useEffect(() => {
     dispatch(ACTIONS.getNetflixOriginals());
     dispatch(ACTIONS.getNowPlayingMovies());
     dispatch(ACTIONS.getTopRateMovies());
-    dispatch(ACTIONS.getActionMovies());
+    dispatch(ACTIONS.getUpcomingMovies());
     dispatch(ACTIONS.getTrendingMovies());
   }, [dispatch]);
 
@@ -30,9 +30,9 @@ function Contents() {
         isNetflix={true}
       />
       <MovieRow movies={NowPlayingMovies} title="Now Playing Movies" />
+      <MovieRow movies={UpcomingMovies} title="Upcoming Movies" />
       <MovieRow movies={TrendingMovies} title="Trending Movies" />
       <MovieRow movies={TopRateMovies} title="Top Rate Movies" />
-      <MovieRow movies={ActionMovies} title="Action Movies" />
     </div>
   );
 }

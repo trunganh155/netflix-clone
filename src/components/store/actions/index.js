@@ -1,8 +1,10 @@
 import axios from "axios";
 import {
+  GET_UPCOMING_MOVIES,
   GET_NETFLIX_ORIGINALS,
   GET_TOPRATE_MOVIES,
   GET_TRENDING_MOVIES,
+  GET_NOWPLAYING_MOVIES,
 } from "../types";
 
 const API_KEY = "ba892525f1584a97a3116207adc90401";
@@ -41,23 +43,23 @@ export const getTopRateMovies = () => async (dispatch) => {
   }
 };
 
-export const getActionMovies = () => async (dispatch) => {
+export const getUpcomingMovies = () => async (dispatch) => {
   try {
     const result = await axios.get(
-      `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=35`
+      `${BASE_URL}/movie/upcoming?api_key=${API_KEY}&language=en-us`
     );
-    dispatch({ type: GET_TRENDING_MOVIES, payload: result.data.results });
+    dispatch({ type: GET_UPCOMING_MOVIES, payload: result.data.results });
   } catch (error) {
-    console.log("Get Action Movies API error", error);
+    console.log("Get Upcoming Movies API error", error);
   }
 };
 
 export const getNowPlayingMovies = () => async (dispatch) => {
   try {
     const result = await axios.get(
-      `${BASE_URL}/movie/now?api_key=${API_KEY}&language=en-us`
+      `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=en-US`
     );
-    dispatch({ type: GET_TRENDING_MOVIES, payload: result.data.results });
+    dispatch({ type: GET_NOWPLAYING_MOVIES, payload: result.data.results });
   } catch (error) {
     console.log("Get Now Playing Movies API error", error);
   }

@@ -1,10 +1,27 @@
-import logo from "../../assets/images/SSphim.png";
+import logo from "../../assets/images/netflix-logo2.png";
 import { FaSearch } from "react-icons/fa";
 import "./Navbar.scss";
 import { useScrollY } from "../hooks";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [scrollY] = useScrollY();
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const handleInputSearchChange = (e) => {
+    const keyword = e.target.value;
+    setKeyword(keyword);
+    keyword.length > 0
+      ? navigate(`/search?keywords=${keyword.trim()}`)
+      : navigate("/");
+  };
+
+  const goHome = () => {
+    navigate("/");
+    setKeyword("");
+  };
 
   return (
     <div
@@ -16,8 +33,8 @@ function Navbar() {
       }
     >
       <div className="navContainer">
-        <div className="logo">
-          <img src={logo} alt="" /> 
+        <div className="logo" onClick={goHome}>
+          <img src={logo} alt="" />
         </div>
         <div className="navSearch">
           <FaSearch className="iconSearch" />
@@ -25,6 +42,8 @@ function Navbar() {
             className="inputSearch"
             type="text"
             placeholder="Input title, people, ..."
+            onChange={handleInputSearchChange}
+            value={keyword}
           />
         </div>
         <div className="navLogin">

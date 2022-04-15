@@ -21,11 +21,19 @@ function Footer() {
           <p className="footer__contact__title">Contact</p>
           <div className="footer__contact__row">
             <FaFacebookSquare />
-            <a href="https://www.facebook.com/tta155/">Trần Trung Anh</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/tta155/"
+            >
+              Trần Trung Anh
+            </a>
           </div>
           <div className="footer__contact__row">
             <HiMail />
-            <a href="">trantrunganh1505@gmail.com</a>
+            <a target="_blank" rel="noopener noreferrer" href="">
+              trantrunganh1505@gmail.com
+            </a>
           </div>
           <div className="footer__contact__row">
             <FaPhone />

@@ -20,6 +20,7 @@
 }
 
 .introHeading {
+    width: 60%;
     font-size: 100px;
     text-shadow: 3px 0px rgba(255, 255, 255, 0.5);
     color: #e50914;
@@ -55,5 +56,7 @@
     bottom: 0;
     width: 100%;
     height: 100px;
-    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5) 40%, rgb(10, 10, 10), rbg(10, 10, 10));
+    background-color: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5) 40%, rgb(10, 10, 10), rbg(10, 10, 10));
+
+
 }

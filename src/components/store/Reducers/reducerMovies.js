@@ -6,6 +6,8 @@ const reducerMoviesInitialState = {
   NowPlayingMovies: null,
   UpcomingMovies: null,
   TopRateMovies: null,
+  MovieDetail: null,
+  SearchMovie: null,
 };
 
 const reducerMovies = (state = reducerMoviesInitialState, action) => {
@@ -13,6 +15,7 @@ const reducerMovies = (state = reducerMoviesInitialState, action) => {
 
   switch (type) {
     case Types.GET_NETFLIX_ORIGINALS:
+      console.log(payload);
       return { ...state, NetflixOriginals: payload };
 
     case Types.GET_TRENDING_MOVIES:
@@ -23,10 +26,15 @@ const reducerMovies = (state = reducerMoviesInitialState, action) => {
 
     case Types.GET_UPCOMING_MOVIES:
       return { ...state, UpcomingMovies: payload };
-      console.log(payload);
 
     case Types.GET_TOPRATE_MOVIES:
       return { ...state, TopRateMovies: payload };
+
+    case Types.SET_MOVIE_DETAIL:
+      return { ...state, MovieDetail: payload };
+
+    case Types.GET_SEARCH_MOVIES:
+      return { ...state, SearchMovie: payload };
 
     default:
       return state;

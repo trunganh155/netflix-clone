@@ -1,18 +1,23 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Intro from "./components/Intro/Intro";
-import Navbar from "./components/Navbar/Navbar";
-import Contents from "./components/Contents/Contents";
 import Footer from "./components/Footer/Footer";
-import GoToTop from "./components/GoToTop/GoToTop";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Pages/Home";
+import Search from "./components/Pages/Search";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Intro />
-      <Contents />
-      <GoToTop />
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

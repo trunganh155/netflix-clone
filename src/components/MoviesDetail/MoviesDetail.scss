@@ -1,0 +1,69 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 40;
+
+    &__close {
+        background-color: rgba(0, 0, 0, 0.85);
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    &__content {
+        position: absolute;
+        top: 22%;
+        left: 0;
+        height: 75%;
+        width: 100%;
+
+        
+
+        &__background {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+        }
+
+        &__title {
+            font-size: 55px;
+            font-weight: bold;
+            padding-left: 50px;
+            padding-top: 50px;
+        }
+        &__detail {
+            width: 50%;
+            height: 100%;
+            padding: 25px 0px 0px 50px;
+
+            & p {
+                padding-bottom: 8px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .rating {
+        color: #21d07a;
+    }
+
+    .release {
+        color: #08b5e1;
+    }
+
+    .overview {
+        color: var(--color-white);
+        font-style: italic;
+    }
+}
+
+.showModal {
+    display: block;
+}
+
+.hideModal {
+    display: none;
+}

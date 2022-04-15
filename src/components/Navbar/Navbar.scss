@@ -18,11 +18,11 @@
 }
 
 .logo {
-    width: 250px;
-    margin-left: 50px;
-    cursor: pointer;
+    width: 160px;
+    margin-left: 40px;
     img {
         width: 100%;
+        cursor: pointer;
     }
 }
 
@@ -31,6 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
     & .iconSearch {
         width: 16px;
         height: 16px;
@@ -74,17 +75,17 @@
     top: 50%;
     transform: translateY(-50%);
     & .btnLogin {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: bold;
-        width: 150px;
-        height: 50px;
+        width: 140px;
+        height: 45px;
         border-radius: 50px;
         background-color: var(--color-red);
         color: var(--color-white);
         cursor: pointer;
         z-index: 40;
         &:hover {
-            border: #fff 1px solid;
+            border: #fff 2px solid;
         }
     }
 }

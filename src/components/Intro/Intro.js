@@ -19,10 +19,11 @@ function Intro() {
         url="https://vimeo.com/644494272"
       />
       <div className="introInfo">
-        <h1 className="introHeading">Netflix</h1>
+        <h1 className="introHeading">Wellcome</h1>
         <p className="introOverview">
-          Netflix movie new comedic animation movie new comedic animation movie
-          new comedic animation movie new comedic animation
+          Watch your TV shows and movies — where you want.
+          <br />
+          Unlimited movies TV shows and more
         </p>
       </div>
       {isMuted ? (

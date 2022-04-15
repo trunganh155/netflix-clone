@@ -1,7 +1,9 @@
-import "./MovieRow.scss";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRef } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 import { SmoothHorizontalScrolling } from "../../utils/index";
+import { setMovieDetail } from "../store/actions";
+import "./MovieRow.scss";
 
 function MovieRow(props) {
   const { movies, title, isNetflix } = props;
@@ -32,6 +34,13 @@ function MovieRow(props) {
     }
   };
 
+  const dispatch = useDispatch();
+
+  const handleSetMovie = (movie) => {
+    console.log(movie);
+    dispatch(setMovieDetail(movie));
+  };
+
   return (
     <div className="movieContainer">
       <h1 className="movieHeading">{title}</h1>
@@ -52,7 +61,12 @@ function MovieRow(props) {
                 ? `http://image.tmdb.org/t/p/original/${movie.poster_path}`
                 : `http://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
               return (
-                <div key={index} className="movieItem" ref={movieRef}>
+                <div
+                  key={index}
+                  className="movieItem"
+                  ref={movieRef}
+                  onClick={() => handleSetMovie(movie)}
+                >
                   <img src={imageUrl} alt="" />
                   <div className="movieName">{movie.name || movie.title}</div>
                 </div>

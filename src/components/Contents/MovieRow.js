@@ -17,7 +17,7 @@ function MovieRow(props) {
       SmoothHorizontalScrolling(
         sliderRef.current,
         250,
-        movieRef.current.clientWidth * 2,
+        movieRef.current.clientWidth * 3,
         sliderRef.current.scrollLeft
       );
     }
@@ -28,7 +28,7 @@ function MovieRow(props) {
       SmoothHorizontalScrolling(
         sliderRef.current,
         250,
-        -movieRef.current.clientWidth * 2,
+        -movieRef.current.clientWidth * 3,
         sliderRef.current.scrollLeft
       );
     }
@@ -37,7 +37,7 @@ function MovieRow(props) {
   const dispatch = useDispatch();
 
   const handleSetMovie = (movie) => {
-    console.log(movie);
+    // console.log(movie);
     dispatch(setMovieDetail(movie));
   };
 

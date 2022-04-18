@@ -7,7 +7,7 @@ const reducerMoviesInitialState = {
   UpcomingMovies: null,
   TopRateMovies: null,
   MovieDetail: null,
-  SearchMovie: null,
+  SearchMovies: null,
 };
 
 const reducerMovies = (state = reducerMoviesInitialState, action) => {
@@ -34,7 +34,7 @@ const reducerMovies = (state = reducerMoviesInitialState, action) => {
       return { ...state, MovieDetail: payload };
 
     case Types.GET_SEARCH_MOVIES:
-      return { ...state, SearchMovie: payload };
+      return { ...state, SearchMovies: payload };
 
     default:
       return state;

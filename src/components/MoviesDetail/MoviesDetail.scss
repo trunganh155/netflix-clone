@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+    from {
+        top: -120px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -6,6 +15,7 @@
     height: 100%;
     color: white;
     z-index: 40;
+    animation: fadeIn 0.6s forwards;
 
     &__close {
         background-color: rgba(0, 0, 0, 0.85);
@@ -19,7 +29,6 @@
         left: 0;
         height: 75%;
         width: 100%;
-
         
 
         &__background {

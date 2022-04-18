@@ -44,6 +44,7 @@ function Navbar() {
             placeholder="Input title, people, ..."
             onChange={handleInputSearchChange}
             value={keyword}
+
           />
         </div>
         <div className="navLogin">

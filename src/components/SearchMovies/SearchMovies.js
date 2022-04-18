@@ -2,7 +2,7 @@ import "./SearchMovies.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { getSearchMovies } from "../store/actions";
+import { getSearchMovies, setMovieDetail } from "../store/actions";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
@@ -17,7 +17,9 @@ function SearchMovies(props) {
     }
   }, [keyword, dispatch]);
 
-  console.log("SearchMovies: " + SearchMovies);
+  const handleSetMovie = (movie) => {
+    dispatch(setMovieDetail(movie));
+  };
 
   return (
     <div className="searchPane">
@@ -27,9 +29,13 @@ function SearchMovies(props) {
             if (movie.backdrop_path !== null && movie.media_type !== "person") {
               const imageUrl = `http://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
               return (
-                <div className="movieItem" key={index}>
+                <div
+                  className="movieItem"
+                  key={index}
+                  onClick={() => handleSetMovie(movie)}
+                >
                   <img src={imageUrl} alt="" />
-                  <span>{movie.name}</span>
+                  <span>{movie.name || movie.title}</span>
                 </div>
               );
             }

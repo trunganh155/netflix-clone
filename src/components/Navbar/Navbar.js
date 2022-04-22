@@ -18,6 +18,10 @@ function Navbar() {
       : navigate("/");
   };
 
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
   const goHome = () => {
     navigate("/");
     setKeyword("");
@@ -27,7 +31,7 @@ function Navbar() {
     <div
       className="navigation"
       style={
-        scrollY < 50
+        scrollY < 100
           ? { backgroundColor: "transparent" }
           : { backgroundColor: "var(--color-background)" }
       }
@@ -44,11 +48,12 @@ function Navbar() {
             placeholder="Input title, people, ..."
             onChange={handleInputSearchChange}
             value={keyword}
-
           />
         </div>
         <div className="navLogin">
-          <button className="btnLogin">Login</button>
+          <button className="btnLogin" onClick={handleLogin}>
+            Login
+          </button>
         </div>
       </div>
     </div>

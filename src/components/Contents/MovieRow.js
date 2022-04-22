@@ -44,15 +44,7 @@ function MovieRow(props) {
   return (
     <div className="movieContainer">
       <h1 className="movieHeading">{title}</h1>
-      <div
-        className="movieSlider"
-        ref={sliderRef}
-        // style={
-        //   movies && movies.lenght > 0
-        //     ? { gridTemplateColumns: `repeat(${movies.length},300px)` }
-        //     : {}
-        // }
-      >
+      <div className="movieSlider" ref={sliderRef}>
         {movies &&
           movies.length > 0 &&
           movies.map((movie, index) => {

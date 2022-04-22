@@ -69,7 +69,7 @@
 
 .movieHeading {
     font-size: 30px;
-    padding: 50px 0px 0px 0px;
+    padding: 40px 0px 0px 0px;
     user-select: none;
 }
 
@@ -93,8 +93,8 @@
 
     & .movieItem {
         transform: scale(1);
-        max-width: 400px;
-        max-height: 500px;
+        max-width: 300px;
+        max-height: 400px;
         width: 100%;
         height: 100%;
 
@@ -115,7 +115,7 @@
         & img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            // object-fit: cover;
         }
     }
 

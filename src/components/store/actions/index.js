@@ -4,6 +4,7 @@ import * as Types from "../types";
 const API_KEY = "ba892525f1584a97a3116207adc90401";
 const BASE_URL = "https://api.themoviedb.org/3";
 
+//GET
 export const getNetflixOriginals = () => async (dispatch) => {
   try {
     const result = await axios.get(
@@ -21,7 +22,7 @@ export const getNetflixOriginals = () => async (dispatch) => {
 export const getTrendingMovies = () => async (dispatch) => {
   try {
     const result = await axios.get(
-      `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-us`
+      `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`
     );
     dispatch({ type: Types.GET_TRENDING_MOVIES, payload: result.data.results });
   } catch (error) {
@@ -32,7 +33,7 @@ export const getTrendingMovies = () => async (dispatch) => {
 export const getTopRateMovies = () => async (dispatch) => {
   try {
     const result = await axios.get(
-      `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-us`
+      `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US`
     );
     dispatch({ type: Types.GET_TOPRATE_MOVIES, payload: result.data.results });
   } catch (error) {
@@ -43,7 +44,7 @@ export const getTopRateMovies = () => async (dispatch) => {
 export const getUpcomingMovies = () => async (dispatch) => {
   try {
     const result = await axios.get(
-      `${BASE_URL}/movie/upcoming?api_key=${API_KEY}&language=en-us`
+      `${BASE_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US`
     );
     dispatch({ type: Types.GET_UPCOMING_MOVIES, payload: result.data.results });
   } catch (error) {
@@ -65,14 +66,25 @@ export const getNowPlayingMovies = () => async (dispatch) => {
   }
 };
 
-export const setMovieDetail = (movie) => (dispatch) => {
+export const getActionMovies = () => async (dispatch) => {
   try {
-    dispatch({
-      type: Types.SET_MOVIE_DETAIL,
-      payload: movie,
-    });
+    const result = await axios.get(
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=28`
+    );
+    dispatch({ type: Types.GET_ACTION_MOVIES, payload: result.data.results });
   } catch (error) {
-    console.log("Set Movie Detail error", error);
+    console.log("Get Action Movies API error", error);
+  }
+};
+
+export const getComedyMovies = () => async (dispatch) => {
+  try {
+    const result = await axios.get(
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=35`
+    );
+    dispatch({ type: Types.GET_COMEDY_MOVIES, payload: result.data.results });
+  } catch (error) {
+    console.log("Get Comedy Movies API error", error);
   }
 };
 
@@ -88,5 +100,17 @@ export const getSearchMovies = (keyword) => async (dispatch) => {
     console.log(result.data.results);
   } catch (error) {
     console.log("Get Search Movie error", error);
+  }
+};
+
+//SET
+export const setMovieDetail = (movie) => (dispatch) => {
+  try {
+    dispatch({
+      type: Types.SET_MOVIE_DETAIL,
+      payload: movie,
+    });
+  } catch (error) {
+    console.log("Set Movie Detail error", error);
   }
 };

@@ -1,9 +1,9 @@
-@keyframes fadeIn {
+@keyframes moveDown {
     from {
-        top: -120px;
+        top: 30%;
     }
     to {
-        top: 0px;
+        top: 50%;
     }
 }
 
@@ -15,7 +15,6 @@
     height: 100%;
     color: white;
     z-index: 40;
-    animation: fadeIn 0.6s forwards;
 
     &__close {
         background-color: rgba(0, 0, 0, 0.85);
@@ -25,47 +24,92 @@
     }
     &__content {
         position: absolute;
-        top: 22%;
-        left: 0;
-        height: 75%;
-        width: 100%;
-        
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 85%;
+        width: 65%;
+        border-radius: 8px;
+        overflow: hidden;
+        animation: moveDown 0.6s forwards;
 
         &__background {
-            height: 100%;
-            width: 100%;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
-        }
+            height: 75%;
+            & img {
+                width: 100%;
+                height: 100%;
+            }
 
-        &__title {
-            font-size: 55px;
-            font-weight: bold;
-            padding-left: 50px;
-            padding-top: 50px;
-        }
-        &__detail {
-            width: 50%;
-            height: 100%;
-            padding: 25px 0px 0px 50px;
+            & .btnClose {
+                position: absolute;
+                top: 14px;
+                right: 16px;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                padding: 8px;
+                background-color: rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+                transition: all 0.3s linear;
 
-            & p {
-                padding-bottom: 8px;
-                font-size: 18px;
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
-    }
 
-    .rating {
-        color: #21d07a;
-    }
+        &__detail {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            background-color: #3d303d;
+            width: 100%;
+            height: 30%;
+            padding: 5px 25px 10px 25px;
 
-    .release {
-        color: #08b5e1;
-    }
+            & .left {
+                & .title {
+                    font-size: 30px;
+                    font-weight: bold;
+                    margin-right: 10px;
+                    color: var(--color-red);
+                }
 
-    .overview {
-        color: var(--color-white);
-        font-style: italic;
+                & .quality {
+                    border: white 2px solid;
+                    border-radius: 4px;
+                    padding: 0px 4px;
+                    position: absolute;
+                    transform: translateY(8px);
+                }
+
+                & .title.quality {
+                    vertical-align: ce;
+                }
+
+                & .overview {
+                    color: var(--color-white);
+                    font-style: italic;
+                    padding-top: 10px;
+                    word-wrap: break-word;                 
+                }
+            }
+
+            & .right {
+                display: block;
+                margin-left: 50px;
+                margin-top: 40px;
+
+                & .rating {
+                    color: #21d07a;
+                    margin-right: 5px;
+                }
+            }
+
+            & span,
+            p {
+                font-size: 14px;
+            }
+        }
     }
 }
 

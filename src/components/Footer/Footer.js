@@ -1,5 +1,4 @@
-import { FaFacebookSquare, FaPhone } from "react-icons/fa";
-import { HiMail } from "react-icons/hi";
+import { FaFacebookSquare, FaInbox, FaPhoneSquare } from "react-icons/fa";
 import "./Footer.scss";
 
 function Footer() {
@@ -26,13 +25,13 @@ function Footer() {
             </a>
           </div>
           <div className="footer__contact__row">
-            <HiMail />
+            <FaInbox />
             <a target="_blank" rel="noopener noreferrer" href="">
               trantrunganh1505@gmail.com
             </a>
           </div>
           <div className="footer__contact__row">
-            <FaPhone />
+            <FaPhoneSquare />
             <a href="">0932.353.395</a>
           </div>
         </div>

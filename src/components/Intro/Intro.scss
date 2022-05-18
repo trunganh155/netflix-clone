@@ -24,11 +24,12 @@
     font-size: 100px;
     text-shadow: 3px 0px rgba(255, 255, 255, 0.5);
     color: #e50914;
+    max-width: 1000px;
 }
 
 .introOverview {
     font-size: 25px;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .btnVolume {
@@ -57,6 +58,4 @@
     width: 100%;
     height: 100px;
     background-color: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5) 40%, rgb(10, 10, 10), rbg(10, 10, 10));
-
-
 }

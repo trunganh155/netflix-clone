@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as ACTIONS from "../store/actions";
-import MovieRow from "./MovieRow";
+import MovieRow from "./MovieRow";  
 
 function Contents() {
   const dispatch = useDispatch();

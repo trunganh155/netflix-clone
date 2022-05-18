@@ -27,14 +27,14 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 85%;
+        height: 90%;
         width: 65%;
         border-radius: 8px;
         overflow: hidden;
         animation: moveDown 0.6s forwards;
 
         &__background {
-            height: 75%;
+            height: 70%;
             & img {
                 width: 100%;
                 height: 100%;
@@ -72,6 +72,7 @@
                     font-weight: bold;
                     margin-right: 10px;
                     color: var(--color-red);
+                    text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
                 }
 
                 & .quality {
@@ -90,7 +91,7 @@
                     color: var(--color-white);
                     font-style: italic;
                     padding-top: 10px;
-                    word-wrap: break-word;                 
+                    word-wrap: break-word;
                 }
             }
 

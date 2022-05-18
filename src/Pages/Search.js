@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Contents from "../Contents/Contents";
-import GoToTop from "../GoToTop/GoToTop";
-import Intro from "../Intro/Intro";
-import MoviesDetail from "../MoviesDetail/MoviesDetail";
+import MoviesDetail from "../components/MoviesDetail/MoviesDetail";
+import SearchMovies from "../components/SearchMovies/SearchMovies";
 
-function Home(props) {
+function Search() {
   const { MovieDetail } = useSelector((state) => state.infoMovies);
   const [isShowMovieDetail, setIsShowMovieDetail] = useState(false);
   useEffect(() => {
@@ -14,12 +12,10 @@ function Home(props) {
 
   return (
     <div>
-      <Intro />
+      <SearchMovies />
       <MoviesDetail movie={MovieDetail} showModal={isShowMovieDetail} />
-      <Contents />
-      <GoToTop />
     </div>
   );
 }
 
-export default Home;
+export default Search;

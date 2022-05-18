@@ -45,7 +45,7 @@ function Navbar() {
           <input
             className="inputSearch"
             type="text"
-            placeholder="Input title, people, ..."
+            placeholder="Movie name, TV shows..."
             onChange={handleInputSearchChange}
             value={keyword}
           />

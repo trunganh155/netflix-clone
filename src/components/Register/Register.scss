@@ -16,7 +16,7 @@
 
         background-color: #162336;
         width: 30%;
-        height: 75%;
+        height: 80%;
         padding: 20px 50px;
         border-radius: 16px;
         box-shadow: 0px 0px 10px 6px #888888;
@@ -33,11 +33,12 @@
         .password {
             width: 100%;
             height: 10%;
-            margin: 25px 0px;
+            margin: 20px 0px;
             display: flex;
             align-items: center;
 
             & svg {
+                margin-top: 10px;
                 width: 22px;
                 height: 22px;
                 color: #dfdfde;
@@ -47,11 +48,12 @@
         & .email {
             width: 100%;
             height: 10%;
-            margin: 25px 0px 25px -4px;
+            margin: 20px 0px 25px -4px;
             display: flex;
             align-items: center;
 
             & svg {
+                margin-top: 10px;
                 width: 26px;
                 height: 26px;
                 color: #dfdfde;
@@ -88,6 +90,12 @@
             &:focus {
                 border-bottom: 1px solid #00c1d4;
             }
+        }
+
+        & .error {
+            color: red;
+            margin: -20px 0px 20px 30px;
+            font-size: 14px;
         }
     }
 }
